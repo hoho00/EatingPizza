@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.Date;
+
 @SpringBootTest
 public class RegisterEatingTest {
 
@@ -16,11 +18,9 @@ public class RegisterEatingTest {
     public void register_test() {
         String userName = "testUser";
         String foodName = "testFood";
-        Eating eating = new Eating("eatingTest", userName, foodName);
+        Eating eating = new Eating("eatingTest" + new Date(), userName, foodName);
 
         eatingRedisRepository.save(eating);
-
-
 //        ValueOperations<String, String> valueOperations =redisTemplate.opsForValue();
 //        valueOperations.set(userName, foodName);
 
