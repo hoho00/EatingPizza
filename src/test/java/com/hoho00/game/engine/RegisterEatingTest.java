@@ -1,12 +1,10 @@
 package com.hoho00.game.engine;
 
 import com.hoho00.game.domain.entity.Eating;
-import com.hoho00.game.domain.repository.EatingRedisRepository;
+import com.hoho00.game.domain.repository.eating.EatingRedisRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
-import java.util.Date;
 
 @SpringBootTest
 public class RegisterEatingTest {
@@ -16,9 +14,9 @@ public class RegisterEatingTest {
 
     @Test
     public void register_test() {
-        String userName = "testUser";
-        String foodName = "testFood";
-        Eating eating = new Eating("eatingTest" + new Date(), userName, foodName);
+        String userName = "testUser1";
+        String foodName = "testFood1";
+        Eating eating = new Eating("eatingTest1", userName, foodName);
 
         eatingRedisRepository.save(eating);
 //        ValueOperations<String, String> valueOperations =redisTemplate.opsForValue();

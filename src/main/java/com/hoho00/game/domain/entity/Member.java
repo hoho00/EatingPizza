@@ -30,4 +30,7 @@ public class Member extends BaseEntity {
 
     @Column(columnDefinition = "INT")
     private Integer exp;
+
+    @Column(columnDefinition = "VARCHAR(1)")
+    private String isEating;
 }
